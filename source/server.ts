@@ -18,6 +18,8 @@ router.use((req, res, next) => {
          STATUS - [${res.statusCode}]`
         );
     });
+
+    next();
 });
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -32,6 +34,8 @@ router.use((req, res, next) => {
         res.header('Access-Control-Allow-Methods', 'GET PATH DELETE POST PUT');
         return res.status(200).json({});
     }
+
+    next();
 });
 
 /** Routes */
