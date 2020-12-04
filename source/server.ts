@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
+import samepleRoutes from './routes/sample';
 
 const NAMESPACE = 'Server';
 const router = express();
@@ -39,6 +40,7 @@ router.use((req, res, next) => {
 });
 
 /** Routes */
+router.use('/sample', samepleRoutes);
 
 /** Error Handling */
 router.use((req, res, next) => {
